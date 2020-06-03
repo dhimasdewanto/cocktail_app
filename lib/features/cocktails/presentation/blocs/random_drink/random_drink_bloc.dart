@@ -21,7 +21,7 @@ class RandomDrinkBloc extends Bloc<RandomDrinkEvent, RandomDrinkState> {
   final GetRandomDrink getRandomDrink;
 
   @override
-  RandomDrinkState get initialState => const RandomDrinkState.loading();
+  RandomDrinkState get initialState => const RandomDrinkState.initial();
 
   @override
   Stream<RandomDrinkState> mapEventToState(

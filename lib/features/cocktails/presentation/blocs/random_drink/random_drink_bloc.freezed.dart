@@ -88,6 +88,10 @@ class _$RandomDrinkStateTearOff {
     return const _LoadingRandomDrinkState();
   }
 
+  _InitialRandomDrinkState initial() {
+    return const _InitialRandomDrinkState();
+  }
+
   _ErrorRandomDrinkState error({String message}) {
     return _ErrorRandomDrinkState(
       message: message,
@@ -103,12 +107,14 @@ mixin _$RandomDrinkState {
   Result when<Result extends Object>(
     Result $default(Drink drink), {
     @required Result loading(),
+    @required Result initial(),
     @required Result error(String message),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>(
     Result $default(Drink drink), {
     Result loading(),
+    Result initial(),
     Result error(String message),
     @required Result orElse(),
   });
@@ -116,12 +122,14 @@ mixin _$RandomDrinkState {
   Result map<Result extends Object>(
     Result $default(_RandomDrinkState value), {
     @required Result loading(_LoadingRandomDrinkState value),
+    @required Result initial(_InitialRandomDrinkState value),
     @required Result error(_ErrorRandomDrinkState value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>(
     Result $default(_RandomDrinkState value), {
     Result loading(_LoadingRandomDrinkState value),
+    Result initial(_InitialRandomDrinkState value),
     Result error(_ErrorRandomDrinkState value),
     @required Result orElse(),
   });
@@ -213,10 +221,12 @@ class _$_RandomDrinkState implements _RandomDrinkState {
   Result when<Result extends Object>(
     Result $default(Drink drink), {
     @required Result loading(),
+    @required Result initial(),
     @required Result error(String message),
   }) {
     assert($default != null);
     assert(loading != null);
+    assert(initial != null);
     assert(error != null);
     return $default(drink);
   }
@@ -226,6 +236,7 @@ class _$_RandomDrinkState implements _RandomDrinkState {
   Result maybeWhen<Result extends Object>(
     Result $default(Drink drink), {
     Result loading(),
+    Result initial(),
     Result error(String message),
     @required Result orElse(),
   }) {
@@ -241,10 +252,12 @@ class _$_RandomDrinkState implements _RandomDrinkState {
   Result map<Result extends Object>(
     Result $default(_RandomDrinkState value), {
     @required Result loading(_LoadingRandomDrinkState value),
+    @required Result initial(_InitialRandomDrinkState value),
     @required Result error(_ErrorRandomDrinkState value),
   }) {
     assert($default != null);
     assert(loading != null);
+    assert(initial != null);
     assert(error != null);
     return $default(this);
   }
@@ -254,6 +267,7 @@ class _$_RandomDrinkState implements _RandomDrinkState {
   Result maybeMap<Result extends Object>(
     Result $default(_RandomDrinkState value), {
     Result loading(_LoadingRandomDrinkState value),
+    Result initial(_InitialRandomDrinkState value),
     Result error(_ErrorRandomDrinkState value),
     @required Result orElse(),
   }) {
@@ -311,10 +325,12 @@ class _$_LoadingRandomDrinkState implements _LoadingRandomDrinkState {
   Result when<Result extends Object>(
     Result $default(Drink drink), {
     @required Result loading(),
+    @required Result initial(),
     @required Result error(String message),
   }) {
     assert($default != null);
     assert(loading != null);
+    assert(initial != null);
     assert(error != null);
     return loading();
   }
@@ -324,6 +340,7 @@ class _$_LoadingRandomDrinkState implements _LoadingRandomDrinkState {
   Result maybeWhen<Result extends Object>(
     Result $default(Drink drink), {
     Result loading(),
+    Result initial(),
     Result error(String message),
     @required Result orElse(),
   }) {
@@ -339,10 +356,12 @@ class _$_LoadingRandomDrinkState implements _LoadingRandomDrinkState {
   Result map<Result extends Object>(
     Result $default(_RandomDrinkState value), {
     @required Result loading(_LoadingRandomDrinkState value),
+    @required Result initial(_InitialRandomDrinkState value),
     @required Result error(_ErrorRandomDrinkState value),
   }) {
     assert($default != null);
     assert(loading != null);
+    assert(initial != null);
     assert(error != null);
     return loading(this);
   }
@@ -352,6 +371,7 @@ class _$_LoadingRandomDrinkState implements _LoadingRandomDrinkState {
   Result maybeMap<Result extends Object>(
     Result $default(_RandomDrinkState value), {
     Result loading(_LoadingRandomDrinkState value),
+    Result initial(_InitialRandomDrinkState value),
     Result error(_ErrorRandomDrinkState value),
     @required Result orElse(),
   }) {
@@ -365,6 +385,107 @@ class _$_LoadingRandomDrinkState implements _LoadingRandomDrinkState {
 
 abstract class _LoadingRandomDrinkState implements RandomDrinkState {
   const factory _LoadingRandomDrinkState() = _$_LoadingRandomDrinkState;
+}
+
+abstract class _$InitialRandomDrinkStateCopyWith<$Res> {
+  factory _$InitialRandomDrinkStateCopyWith(_InitialRandomDrinkState value,
+          $Res Function(_InitialRandomDrinkState) then) =
+      __$InitialRandomDrinkStateCopyWithImpl<$Res>;
+}
+
+class __$InitialRandomDrinkStateCopyWithImpl<$Res>
+    extends _$RandomDrinkStateCopyWithImpl<$Res>
+    implements _$InitialRandomDrinkStateCopyWith<$Res> {
+  __$InitialRandomDrinkStateCopyWithImpl(_InitialRandomDrinkState _value,
+      $Res Function(_InitialRandomDrinkState) _then)
+      : super(_value, (v) => _then(v as _InitialRandomDrinkState));
+
+  @override
+  _InitialRandomDrinkState get _value =>
+      super._value as _InitialRandomDrinkState;
+}
+
+class _$_InitialRandomDrinkState implements _InitialRandomDrinkState {
+  const _$_InitialRandomDrinkState();
+
+  @override
+  String toString() {
+    return 'RandomDrinkState.initial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InitialRandomDrinkState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(Drink drink), {
+    @required Result loading(),
+    @required Result initial(),
+    @required Result error(String message),
+  }) {
+    assert($default != null);
+    assert(loading != null);
+    assert(initial != null);
+    assert(error != null);
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(Drink drink), {
+    Result loading(),
+    Result initial(),
+    Result error(String message),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(_RandomDrinkState value), {
+    @required Result loading(_LoadingRandomDrinkState value),
+    @required Result initial(_InitialRandomDrinkState value),
+    @required Result error(_ErrorRandomDrinkState value),
+  }) {
+    assert($default != null);
+    assert(loading != null);
+    assert(initial != null);
+    assert(error != null);
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(_RandomDrinkState value), {
+    Result loading(_LoadingRandomDrinkState value),
+    Result initial(_InitialRandomDrinkState value),
+    Result error(_ErrorRandomDrinkState value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitialRandomDrinkState implements RandomDrinkState {
+  const factory _InitialRandomDrinkState() = _$_InitialRandomDrinkState;
 }
 
 abstract class _$ErrorRandomDrinkStateCopyWith<$Res> {
@@ -427,10 +548,12 @@ class _$_ErrorRandomDrinkState implements _ErrorRandomDrinkState {
   Result when<Result extends Object>(
     Result $default(Drink drink), {
     @required Result loading(),
+    @required Result initial(),
     @required Result error(String message),
   }) {
     assert($default != null);
     assert(loading != null);
+    assert(initial != null);
     assert(error != null);
     return error(message);
   }
@@ -440,6 +563,7 @@ class _$_ErrorRandomDrinkState implements _ErrorRandomDrinkState {
   Result maybeWhen<Result extends Object>(
     Result $default(Drink drink), {
     Result loading(),
+    Result initial(),
     Result error(String message),
     @required Result orElse(),
   }) {
@@ -455,10 +579,12 @@ class _$_ErrorRandomDrinkState implements _ErrorRandomDrinkState {
   Result map<Result extends Object>(
     Result $default(_RandomDrinkState value), {
     @required Result loading(_LoadingRandomDrinkState value),
+    @required Result initial(_InitialRandomDrinkState value),
     @required Result error(_ErrorRandomDrinkState value),
   }) {
     assert($default != null);
     assert(loading != null);
+    assert(initial != null);
     assert(error != null);
     return error(this);
   }
@@ -468,6 +594,7 @@ class _$_ErrorRandomDrinkState implements _ErrorRandomDrinkState {
   Result maybeMap<Result extends Object>(
     Result $default(_RandomDrinkState value), {
     Result loading(_LoadingRandomDrinkState value),
+    Result initial(_InitialRandomDrinkState value),
     Result error(_ErrorRandomDrinkState value),
     @required Result orElse(),
   }) {

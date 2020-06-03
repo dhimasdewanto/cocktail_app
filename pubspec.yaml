@@ -71,6 +71,9 @@ dev_dependencies:
   # This package can be used as a replacement for pedantic for those who prefer stricter rules.
   lint: ^1.2.0
 
+  # For testing purposes.
+  mockito: ^4.1.1
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
