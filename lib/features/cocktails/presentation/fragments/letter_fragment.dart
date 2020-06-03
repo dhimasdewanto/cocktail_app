@@ -13,36 +13,31 @@ class LetterFragment extends StatelessWidget {
     final letterBloc = context.bloc<LetterListDrinksBloc>();
 
     return ListView(
-      children: <Widget>[
-        ListTile(
-          title: const Text('A'),
+      children: List.generate(26, (index) {
+        final alphabetIndex = index + 65;
+        final letter = String.fromCharCode(alphabetIndex);
+        return ListTile(
+          title: Text(letter),
           onTap: () async {
-            const letter = 'A';
-            letterBloc.add(const LetterListDrinksEvent(letter));
-            await ExtendedNavigator.of(context).pushNamed(
-              Routes.letterListDrinksPage,
-              arguments: LetterListDrinksPageArguments(
-                letter: letter,
-                letterListDrinksBloc: letterBloc,
-              ),
-            );
+            _navigateToListDrinksPage(context, letterBloc, letter);
           },
-        ),
-        ListTile(
-          title: const Text('B'),
-          onTap: () async {
-            const letter = 'B';
-            letterBloc.add(const LetterListDrinksEvent(letter));
-            await ExtendedNavigator.of(context).pushNamed(
-              Routes.letterListDrinksPage,
-              arguments: LetterListDrinksPageArguments(
-                letter: letter,
-                letterListDrinksBloc: letterBloc,
-              ),
-            );
-          },
-        ),
-      ],
+        );
+      }),
+    );
+  }
+
+  Future<void> _navigateToListDrinksPage(
+    BuildContext context,
+    LetterListDrinksBloc letterBloc,
+    String letter,
+  ) async {
+    letterBloc.add(LetterListDrinksEvent(letter));
+    await ExtendedNavigator.of(context).pushNamed(
+      Routes.letterListDrinksPage,
+      arguments: LetterListDrinksPageArguments(
+        letter: letter,
+        letterListDrinksBloc: letterBloc,
+      ),
     );
   }
 }
