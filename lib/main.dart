@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'core/app_settings.dart';
-import 'presentation/cocktail/pages/cocktail_page.dart';
+import 'features/cocktails/presentation/pages/cocktail_page.dart';
 
 void main() {
   runApp(MyApp());
