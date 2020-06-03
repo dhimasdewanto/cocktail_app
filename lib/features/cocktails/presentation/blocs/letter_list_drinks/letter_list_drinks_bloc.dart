@@ -22,7 +22,7 @@ class LetterListDrinksBloc
 
   @override
   LetterListDrinksState get initialState =>
-      const LetterListDrinksState.loading();
+      const LetterListDrinksState.initial();
 
   @override
   Stream<LetterListDrinksState> mapEventToState(

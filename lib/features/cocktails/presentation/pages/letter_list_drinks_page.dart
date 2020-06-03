@@ -28,6 +28,7 @@ class LetterListDrinksPage extends StatelessWidget {
         body: BlocBuilder<LetterListDrinksBloc, LetterListDrinksState>(
           builder: (context, state) {
             return state.when(
+              initial: () => const Offstage(),
               loading: () => const Center(
                 child: CircularProgressIndicator(),
               ),

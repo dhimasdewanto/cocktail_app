@@ -83,6 +83,7 @@ void main() {
     void setGetRandomDrinkSuccess() => when(getRandomDrink(unit))
         .thenAnswer((_) async => right(correctResult));
 
+    // Set fail use case.
     void setGetRandomDrinkFail() => when(getRandomDrink(any))
         .thenAnswer((_) async => left(const DefaultFailure()));
 
