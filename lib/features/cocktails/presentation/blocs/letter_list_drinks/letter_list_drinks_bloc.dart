@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:cocktail_app/features/cocktails/domain/entities/drink.dart';
+import 'package:cocktail_app/features/cocktails/domain/failures/failures.dart';
 import 'package:cocktail_app/features/cocktails/domain/use_cases/get_drinks_by_letter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -31,11 +32,19 @@ class LetterListDrinksBloc
 
     final eitherListDrinks = await getDrinksByLetter(event.letter);
 
-    yield eitherListDrinks.fold(
-      (failure) => const LetterListDrinksState.error(
-        message: 'Something wrong',
-      ),
-      (listDrinks) => LetterListDrinksState.view(listDrinks),
+    yield* eitherListDrinks.fold(
+      (failure) async* {
+        if (failure is NotFoundFailure) {
+          yield const LetterListDrinksState.notFound();
+        } else {
+          yield const LetterListDrinksState.error(
+            message: 'Something wrong',
+          );
+        }
+      },
+      (listDrinks) async* {
+        yield LetterListDrinksState.view(listDrinks);
+      },
     );
   }
 }

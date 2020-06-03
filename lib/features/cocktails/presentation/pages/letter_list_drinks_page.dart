@@ -32,6 +32,9 @@ class LetterListDrinksPage extends StatelessWidget {
               error: (message) => Center(
                 child: Text(message),
               ),
+              notFound: () => Center(
+                child: Text('$letter not found'),
+              ),
               view: _viewWidget,
             );
           },

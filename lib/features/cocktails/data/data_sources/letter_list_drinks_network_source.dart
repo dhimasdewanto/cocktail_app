@@ -22,15 +22,20 @@ class LetterListDrinksNetworkSourceImpl implements LetterListDrinksNetworkSource
   @override
   Future<List<DrinkModel>> getListDrinksByLetter(String letter) async {
     if (letter.length != 1) {
-      throw CharOnlyExceptions();
+      throw CharOnlyException();
     }
 
     final response = await dio.get('/v1/1/search.php', queryParameters: {
       'f': letter[0],
     });
 
-    final responseData = response.data['drinks'] as List;
-    return _convertListMapToListModel(responseData);
+    final responseData = response.data['drinks'];
+
+    if (responseData == null) {
+      throw NotFoundException();
+    }
+
+    return _convertListMapToListModel(responseData as List);
   }
 
   List<DrinkModel> _convertListMapToListModel(List listMap) {

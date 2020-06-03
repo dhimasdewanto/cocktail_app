@@ -134,6 +134,10 @@ class _$LetterListDrinksStateTearOff {
     return const _LoadingLetterListDrinksState();
   }
 
+  _NotFoundLetterListDrinksState notFound() {
+    return const _NotFoundLetterListDrinksState();
+  }
+
   _ErrorLetterListDrinksState error({String message}) {
     return _ErrorLetterListDrinksState(
       message: message,
@@ -149,12 +153,14 @@ mixin _$LetterListDrinksState {
   Result when<Result extends Object>({
     @required Result view(List<Drink> listDrinks),
     @required Result loading(),
+    @required Result notFound(),
     @required Result error(String message),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result view(List<Drink> listDrinks),
     Result loading(),
+    Result notFound(),
     Result error(String message),
     @required Result orElse(),
   });
@@ -162,12 +168,14 @@ mixin _$LetterListDrinksState {
   Result map<Result extends Object>({
     @required Result view(_ViewLetterListDrinksState value),
     @required Result loading(_LoadingLetterListDrinksState value),
+    @required Result notFound(_NotFoundLetterListDrinksState value),
     @required Result error(_ErrorLetterListDrinksState value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result view(_ViewLetterListDrinksState value),
     Result loading(_LoadingLetterListDrinksState value),
+    Result notFound(_NotFoundLetterListDrinksState value),
     Result error(_ErrorLetterListDrinksState value),
     @required Result orElse(),
   });
@@ -252,10 +260,12 @@ class _$_ViewLetterListDrinksState implements _ViewLetterListDrinksState {
   Result when<Result extends Object>({
     @required Result view(List<Drink> listDrinks),
     @required Result loading(),
+    @required Result notFound(),
     @required Result error(String message),
   }) {
     assert(view != null);
     assert(loading != null);
+    assert(notFound != null);
     assert(error != null);
     return view(listDrinks);
   }
@@ -265,6 +275,7 @@ class _$_ViewLetterListDrinksState implements _ViewLetterListDrinksState {
   Result maybeWhen<Result extends Object>({
     Result view(List<Drink> listDrinks),
     Result loading(),
+    Result notFound(),
     Result error(String message),
     @required Result orElse(),
   }) {
@@ -280,10 +291,12 @@ class _$_ViewLetterListDrinksState implements _ViewLetterListDrinksState {
   Result map<Result extends Object>({
     @required Result view(_ViewLetterListDrinksState value),
     @required Result loading(_LoadingLetterListDrinksState value),
+    @required Result notFound(_NotFoundLetterListDrinksState value),
     @required Result error(_ErrorLetterListDrinksState value),
   }) {
     assert(view != null);
     assert(loading != null);
+    assert(notFound != null);
     assert(error != null);
     return view(this);
   }
@@ -293,6 +306,7 @@ class _$_ViewLetterListDrinksState implements _ViewLetterListDrinksState {
   Result maybeMap<Result extends Object>({
     Result view(_ViewLetterListDrinksState value),
     Result loading(_LoadingLetterListDrinksState value),
+    Result notFound(_NotFoundLetterListDrinksState value),
     Result error(_ErrorLetterListDrinksState value),
     @required Result orElse(),
   }) {
@@ -353,10 +367,12 @@ class _$_LoadingLetterListDrinksState implements _LoadingLetterListDrinksState {
   Result when<Result extends Object>({
     @required Result view(List<Drink> listDrinks),
     @required Result loading(),
+    @required Result notFound(),
     @required Result error(String message),
   }) {
     assert(view != null);
     assert(loading != null);
+    assert(notFound != null);
     assert(error != null);
     return loading();
   }
@@ -366,6 +382,7 @@ class _$_LoadingLetterListDrinksState implements _LoadingLetterListDrinksState {
   Result maybeWhen<Result extends Object>({
     Result view(List<Drink> listDrinks),
     Result loading(),
+    Result notFound(),
     Result error(String message),
     @required Result orElse(),
   }) {
@@ -381,10 +398,12 @@ class _$_LoadingLetterListDrinksState implements _LoadingLetterListDrinksState {
   Result map<Result extends Object>({
     @required Result view(_ViewLetterListDrinksState value),
     @required Result loading(_LoadingLetterListDrinksState value),
+    @required Result notFound(_NotFoundLetterListDrinksState value),
     @required Result error(_ErrorLetterListDrinksState value),
   }) {
     assert(view != null);
     assert(loading != null);
+    assert(notFound != null);
     assert(error != null);
     return loading(this);
   }
@@ -394,6 +413,7 @@ class _$_LoadingLetterListDrinksState implements _LoadingLetterListDrinksState {
   Result maybeMap<Result extends Object>({
     Result view(_ViewLetterListDrinksState value),
     Result loading(_LoadingLetterListDrinksState value),
+    Result notFound(_NotFoundLetterListDrinksState value),
     Result error(_ErrorLetterListDrinksState value),
     @required Result orElse(),
   }) {
@@ -408,6 +428,111 @@ class _$_LoadingLetterListDrinksState implements _LoadingLetterListDrinksState {
 abstract class _LoadingLetterListDrinksState implements LetterListDrinksState {
   const factory _LoadingLetterListDrinksState() =
       _$_LoadingLetterListDrinksState;
+}
+
+abstract class _$NotFoundLetterListDrinksStateCopyWith<$Res> {
+  factory _$NotFoundLetterListDrinksStateCopyWith(
+          _NotFoundLetterListDrinksState value,
+          $Res Function(_NotFoundLetterListDrinksState) then) =
+      __$NotFoundLetterListDrinksStateCopyWithImpl<$Res>;
+}
+
+class __$NotFoundLetterListDrinksStateCopyWithImpl<$Res>
+    extends _$LetterListDrinksStateCopyWithImpl<$Res>
+    implements _$NotFoundLetterListDrinksStateCopyWith<$Res> {
+  __$NotFoundLetterListDrinksStateCopyWithImpl(
+      _NotFoundLetterListDrinksState _value,
+      $Res Function(_NotFoundLetterListDrinksState) _then)
+      : super(_value, (v) => _then(v as _NotFoundLetterListDrinksState));
+
+  @override
+  _NotFoundLetterListDrinksState get _value =>
+      super._value as _NotFoundLetterListDrinksState;
+}
+
+class _$_NotFoundLetterListDrinksState
+    implements _NotFoundLetterListDrinksState {
+  const _$_NotFoundLetterListDrinksState();
+
+  @override
+  String toString() {
+    return 'LetterListDrinksState.notFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _NotFoundLetterListDrinksState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result view(List<Drink> listDrinks),
+    @required Result loading(),
+    @required Result notFound(),
+    @required Result error(String message),
+  }) {
+    assert(view != null);
+    assert(loading != null);
+    assert(notFound != null);
+    assert(error != null);
+    return notFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result view(List<Drink> listDrinks),
+    Result loading(),
+    Result notFound(),
+    Result error(String message),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (notFound != null) {
+      return notFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result view(_ViewLetterListDrinksState value),
+    @required Result loading(_LoadingLetterListDrinksState value),
+    @required Result notFound(_NotFoundLetterListDrinksState value),
+    @required Result error(_ErrorLetterListDrinksState value),
+  }) {
+    assert(view != null);
+    assert(loading != null);
+    assert(notFound != null);
+    assert(error != null);
+    return notFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result view(_ViewLetterListDrinksState value),
+    Result loading(_LoadingLetterListDrinksState value),
+    Result notFound(_NotFoundLetterListDrinksState value),
+    Result error(_ErrorLetterListDrinksState value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (notFound != null) {
+      return notFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NotFoundLetterListDrinksState implements LetterListDrinksState {
+  const factory _NotFoundLetterListDrinksState() =
+      _$_NotFoundLetterListDrinksState;
 }
 
 abstract class _$ErrorLetterListDrinksStateCopyWith<$Res> {
@@ -472,10 +597,12 @@ class _$_ErrorLetterListDrinksState implements _ErrorLetterListDrinksState {
   Result when<Result extends Object>({
     @required Result view(List<Drink> listDrinks),
     @required Result loading(),
+    @required Result notFound(),
     @required Result error(String message),
   }) {
     assert(view != null);
     assert(loading != null);
+    assert(notFound != null);
     assert(error != null);
     return error(message);
   }
@@ -485,6 +612,7 @@ class _$_ErrorLetterListDrinksState implements _ErrorLetterListDrinksState {
   Result maybeWhen<Result extends Object>({
     Result view(List<Drink> listDrinks),
     Result loading(),
+    Result notFound(),
     Result error(String message),
     @required Result orElse(),
   }) {
@@ -500,10 +628,12 @@ class _$_ErrorLetterListDrinksState implements _ErrorLetterListDrinksState {
   Result map<Result extends Object>({
     @required Result view(_ViewLetterListDrinksState value),
     @required Result loading(_LoadingLetterListDrinksState value),
+    @required Result notFound(_NotFoundLetterListDrinksState value),
     @required Result error(_ErrorLetterListDrinksState value),
   }) {
     assert(view != null);
     assert(loading != null);
+    assert(notFound != null);
     assert(error != null);
     return error(this);
   }
@@ -513,6 +643,7 @@ class _$_ErrorLetterListDrinksState implements _ErrorLetterListDrinksState {
   Result maybeMap<Result extends Object>({
     Result view(_ViewLetterListDrinksState value),
     Result loading(_LoadingLetterListDrinksState value),
+    Result notFound(_NotFoundLetterListDrinksState value),
     Result error(_ErrorLetterListDrinksState value),
     @required Result orElse(),
   }) {

@@ -1,4 +1,5 @@
 import 'package:cocktail_app/features/cocktails/data/data_sources/letter_list_drinks_network_source.dart';
+import 'package:cocktail_app/features/cocktails/data/exceptions/exceptions.dart';
 import 'package:cocktail_app/features/cocktails/data/models/drink_model.dart';
 import 'package:cocktail_app/features/cocktails/domain/entities/drink.dart';
 import 'package:cocktail_app/core/failures/failure.dart';
@@ -23,10 +24,15 @@ class LetterListDrinksRepoData implements LetterListDrinksRepo {
     List<Drink> listDrinks;
 
     try {
-      final listDrinksModel = await letterNetworkSource.getListDrinksByLetter(letter);
+      final listDrinksModel =
+          await letterNetworkSource.getListDrinksByLetter(letter);
       listDrinks = _convertModelsToEntities(listDrinksModel);
-    } catch (e) {
+    } on CharOnlyException {
       return left(const CharOnlyFailure());
+    } on NotFoundException {
+      return left(const NotFoundFailure());
+    } catch (e) {
+      return left(ServerFailure(message: e.toString()));
     }
 
     return right(listDrinks);
