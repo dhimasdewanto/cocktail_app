@@ -1,6 +1,9 @@
 import 'package:cocktail_app/core/app_settings.dart';
+import 'package:cocktail_app/core/dependency_injection/dependency_injection.dart';
 import 'package:cocktail_app/features/cocktails/presentation/fragments/random_fragment.dart';
+import 'package:cocktail_app/features/cocktails/presentation/blocs/random_drink/random_drink_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// Homepage of Cocktail App.
 class CocktailPage extends StatefulWidget {
@@ -35,7 +38,10 @@ class _CocktailPageState extends State<CocktailPage> {
       appBar: AppBar(
         title: const Text(AppSettings.appName),
       ),
-      body: _listFragments[_selectedIndex],
+      body: BlocProvider<RandomDrinkBloc>(
+        create: (_) => getIt<RandomDrinkBloc>(),
+        child: _listFragments[_selectedIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onFragmentChanged,

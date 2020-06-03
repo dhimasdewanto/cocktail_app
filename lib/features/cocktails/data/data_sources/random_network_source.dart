@@ -21,7 +21,7 @@ class RandomNetworkSourceImpl implements RandomNetworkSource {
   @override
   Future<DrinkModel> getRandomCocktail() async {
     final response = await dio.get('/v1/1/random.php');
-    final responseData = response.data as List;
+    final responseData = response.data['drinks'] as List;
     return DrinkModel.fromJson(responseData[0] as Map);
   }
 }
