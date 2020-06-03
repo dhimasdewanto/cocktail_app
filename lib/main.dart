@@ -1,8 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import 'core/apps/app_settings.dart';
 import 'core/dependency_injection/dependency_injection.dart' as dependency_injection;
-import 'features/cocktails/presentation/pages/cocktail_page.dart';
+import 'core/router/router.gr.dart';
 
 void main() {
   dependency_injection.initInjection();
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
-      home: const CocktailPage(),
+      builder: ExtendedNavigator<Router>(router: Router()),
     );
   }
 }

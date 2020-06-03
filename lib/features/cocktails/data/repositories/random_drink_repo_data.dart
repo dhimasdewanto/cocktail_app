@@ -25,7 +25,7 @@ class RandomDrinkRepoData implements RandomDrinkRepo {
       final drinkModel = await randomNetworkSource.getRandomCocktail();
       drink = drinkModel.toEntity();
     } catch (e) {
-      return left(ServerFailure());
+      return left(const ServerFailure());
     }
     
     return right(drink);
