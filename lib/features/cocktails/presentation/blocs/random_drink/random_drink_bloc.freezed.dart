@@ -147,6 +147,8 @@ abstract class _$RandomDrinkStateCopyWith<$Res> {
           _RandomDrinkState value, $Res Function(_RandomDrinkState) then) =
       __$RandomDrinkStateCopyWithImpl<$Res>;
   $Res call({Drink drink});
+
+  $DrinkCopyWith<$Res> get drink;
 }
 
 class __$RandomDrinkStateCopyWithImpl<$Res>
@@ -166,6 +168,16 @@ class __$RandomDrinkStateCopyWithImpl<$Res>
     return _then(_RandomDrinkState(
       drink: drink == freezed ? _value.drink : drink as Drink,
     ));
+  }
+
+  @override
+  $DrinkCopyWith<$Res> get drink {
+    if (_value.drink == null) {
+      return null;
+    }
+    return $DrinkCopyWith<$Res>(_value.drink, (value) {
+      return _then(_value.copyWith(drink: value));
+    });
   }
 }
 
