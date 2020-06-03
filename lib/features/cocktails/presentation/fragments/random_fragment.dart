@@ -1,3 +1,4 @@
+import 'package:cocktail_app/features/cocktails/presentation/widgets/detail_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cocktail_app/features/cocktails/presentation/blocs/random_drink/random_drink_bloc.dart';
@@ -22,7 +23,9 @@ class _RandomFragmentState extends State<RandomFragment> {
     return BlocBuilder<RandomDrinkBloc, RandomDrinkState>(
       builder: (context, state) {
         return state.map(
-          (randomDrink) => Text(randomDrink.drink.idDrink),
+          (randomDrink) => DetailWidget(
+            drink: randomDrink.drink,
+          ),
           loading: (loading) => const Center(
             child: CircularProgressIndicator(),
           ),

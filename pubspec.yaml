@@ -24,6 +24,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Get image from network, then cached.
+  cached_network_image: ^2.2.0+1
+
   # Functional programming in Dart.
   dartz: ^0.9.1
 
