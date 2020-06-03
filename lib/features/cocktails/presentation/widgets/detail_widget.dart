@@ -3,6 +3,7 @@ import 'package:cocktail_app/core/apps/app_styles.dart';
 import 'package:cocktail_app/features/cocktails/domain/entities/drink.dart';
 import 'package:flutter/material.dart';
 
+/// Widget to show detail of drink.
 class DetailWidget extends StatelessWidget {
   const DetailWidget({
     Key key,

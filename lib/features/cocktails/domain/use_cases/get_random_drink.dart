@@ -6,6 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 
+/// Use case of get random drink.
 @lazySingleton
 class GetRandomDrink implements UseCase<Drink, Unit> {
   GetRandomDrink({

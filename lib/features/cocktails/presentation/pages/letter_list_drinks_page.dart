@@ -5,6 +5,8 @@ import 'package:cocktail_app/features/cocktails/presentation/blocs/letter_list_d
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// Page of [LetterListDrinksPage].
+/// Need to pass [LetterListDrinksBloc].
 class LetterListDrinksPage extends StatelessWidget {
   const LetterListDrinksPage({
     Key key,
