@@ -1,4 +1,4 @@
-import 'package:cocktail_app/core/failure.dart';
+import 'package:cocktail_app/core/failures/failure.dart';
 import 'package:cocktail_app/features/cocktails/data/data_sources/random_network_source.dart';
 import 'package:cocktail_app/features/cocktails/domain/entities/drink.dart';
 import 'package:cocktail_app/features/cocktails/domain/failures/failures.dart';
@@ -27,7 +27,6 @@ class RandomDrinkRepoData implements RandomDrinkRepo {
     } catch (e) {
       return left(ServerFailure());
     }
-
     
     return right(drink);
   }

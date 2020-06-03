@@ -1,5 +1,5 @@
-import 'package:cocktail_app/core/failure.dart';
-import 'package:cocktail_app/core/use_case.dart';
+import 'package:cocktail_app/core/failures/failure.dart';
+import 'package:cocktail_app/core/use_cases/use_case.dart';
 import 'package:cocktail_app/features/cocktails/domain/entities/drink.dart';
 import 'package:cocktail_app/features/cocktails/domain/repositories/random_drink_repo.dart';
 import 'package:dartz/dartz.dart';

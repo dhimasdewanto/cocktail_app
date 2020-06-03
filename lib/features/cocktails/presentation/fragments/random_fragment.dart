@@ -1,4 +1,4 @@
-import 'package:cocktail_app/core/app_styles.dart';
+import 'package:cocktail_app/core/apps/app_styles.dart';
 import 'package:cocktail_app/features/cocktails/presentation/widgets/detail_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -43,7 +43,7 @@ class _RandomFragmentState extends State<RandomFragment> {
                 child: FloatingActionButton.extended(
                   onPressed: _setNewRandomDrink,
                   label: const Text('New Random Drink'),
-                  icon: Icon(Icons.local_drink),
+                  icon: const Icon(Icons.local_drink),
                 ),
               ),
             ),

@@ -1,4 +1,4 @@
-import 'package:cocktail_app/core/app_settings.dart';
+import 'package:cocktail_app/core/apps/app_settings.dart';
 import 'package:cocktail_app/core/dependency_injection/dependency_injection.dart';
 import 'package:cocktail_app/features/cocktails/presentation/fragments/random_fragment.dart';
 import 'package:cocktail_app/features/cocktails/presentation/blocs/random_drink/random_drink_bloc.dart';

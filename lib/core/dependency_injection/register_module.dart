@@ -1,6 +1,7 @@
-import 'package:cocktail_app/core/app_settings.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+
+import '../apps/app_settings.dart';
 
 @module
 abstract class RegisterModule {
