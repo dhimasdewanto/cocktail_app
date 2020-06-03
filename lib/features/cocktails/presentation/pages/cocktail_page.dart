@@ -1,5 +1,7 @@
 import 'package:cocktail_app/core/apps/app_settings.dart';
 import 'package:cocktail_app/core/dependency_injection/dependency_injection.dart';
+import 'package:cocktail_app/features/cocktails/presentation/blocs/letter_list_drinks/letter_list_drinks_bloc.dart';
+import 'package:cocktail_app/features/cocktails/presentation/fragments/letter_fragment.dart';
 import 'package:cocktail_app/features/cocktails/presentation/fragments/random_fragment.dart';
 import 'package:cocktail_app/features/cocktails/presentation/blocs/random_drink/random_drink_bloc.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,7 @@ class _CocktailPageState extends State<CocktailPage> {
 
   final _listFragments = const [
     RandomFragment(),
-    RandomFragment(),
+    LetterFragment(),
   ];
 
   final _navbarItems = const [
@@ -27,8 +29,8 @@ class _CocktailPageState extends State<CocktailPage> {
       title: Text('Random'),
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.local_drink),
-      title: Text('Random'),
+      icon: Icon(Icons.list),
+      title: Text('Letter'),
     ),
   ];
 
@@ -38,8 +40,15 @@ class _CocktailPageState extends State<CocktailPage> {
       appBar: AppBar(
         title: const Text(AppSettings.appName),
       ),
-      body: BlocProvider<RandomDrinkBloc>(
-        create: (_) => getIt<RandomDrinkBloc>(),
+      body: MultiBlocProvider(
+        providers: [
+          BlocProvider<RandomDrinkBloc>(
+            create: (_) => getIt<RandomDrinkBloc>(),
+          ),
+          BlocProvider<LetterListDrinksBloc>(
+            create: (_) => getIt<LetterListDrinksBloc>(),
+          ),
+        ],
         child: _listFragments[_selectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
