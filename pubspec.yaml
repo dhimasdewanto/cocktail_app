@@ -24,6 +24,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Functional programming in Dart.
+  dartz: ^0.9.1
+
+  # A powerful Http client for Dart, which supports Interceptors, 
+  # Global configuration, FormData, Request Cancellation, File downloading, Timeout etc. 
+  dio: ^3.0.9
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
