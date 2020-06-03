@@ -1,5 +1,7 @@
 import 'package:cocktail_app/features/cocktails/domain/entities/drink.dart';
 
+/// Extended version of [Drink] entitiy.
+/// Has features like convert to json, entity, to json, etc.
 class DrinkModel {
   DrinkModel(
     this.idDrink,

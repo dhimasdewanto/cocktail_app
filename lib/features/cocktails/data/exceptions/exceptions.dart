@@ -1,0 +1,1 @@
+class CharOnlyExceptions implements Exception {}

@@ -1,3 +1,5 @@
+/// Entity of Drink, and that's it.
+/// If you want add features like convert to json, consider use [DrinkModel].
 class Drink {
   Drink(
     this.idDrink,
