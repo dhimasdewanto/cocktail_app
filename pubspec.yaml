@@ -38,6 +38,12 @@ dependencies:
   # Also has sealed class generator.
   freezed_annotation: ^0.7.1
 
+  # This is a simple Service Locator for Dart and Flutter projects.
+  get_it: ^4.0.2
+
+  # Injectable is a convenient code generator for get_it.
+  injectable: ^0.4.0+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -48,6 +54,9 @@ dev_dependencies:
   # Another code generator for unions/pattern-matching/copy.
   # Also has sealed class generator.
   freezed: ^0.10.9
+
+  # Generator of injectable.
+  injectable_generator: ^0.4.1
 
   # Is a hand-picked, open-source, community-driven collection of lint rules for Dart and Flutter projects.
   # This package can be used as a replacement for pedantic for those who prefer stricter rules.
