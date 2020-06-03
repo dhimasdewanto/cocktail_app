@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cocktail_app/core/app_styles.dart';
 import 'package:cocktail_app/features/cocktails/domain/entities/drink.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,9 @@ class DetailWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      padding: EdgeInsets.only(
+        bottom: AppStyles.padding + 60.0,
+      ),
       children: <Widget>[
         CachedNetworkImage(
           imageUrl: drink.strDrinkThumb,

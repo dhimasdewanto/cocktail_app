@@ -1,3 +1,4 @@
+import 'package:cocktail_app/core/app_styles.dart';
 import 'package:cocktail_app/features/cocktails/presentation/widgets/detail_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,25 +16,44 @@ class _RandomFragmentState extends State<RandomFragment> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    context.bloc<RandomDrinkBloc>().add(const RandomDrinkEvent());
+    _setNewRandomDrink();
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RandomDrinkBloc, RandomDrinkState>(
       builder: (context, state) {
-        return state.map(
-          (randomDrink) => DetailWidget(
-            drink: randomDrink.drink,
-          ),
-          loading: (loading) => const Center(
-            child: CircularProgressIndicator(),
-          ),
-          error: (error) => Center(
-            child: Text(error.message),
-          ),
+        return Stack(
+          children: <Widget>[
+            state.map(
+              (randomDrink) => DetailWidget(
+                drink: randomDrink.drink,
+              ),
+              loading: (loading) => const Center(
+                child: CircularProgressIndicator(),
+              ),
+              error: (error) => Center(
+                child: Text(error.message),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.all(AppStyles.padding),
+                child: FloatingActionButton.extended(
+                  onPressed: _setNewRandomDrink,
+                  label: const Text('New Random Drink'),
+                  icon: Icon(Icons.local_drink),
+                ),
+              ),
+            ),
+          ],
         );
       },
     );
+  }
+
+  void _setNewRandomDrink() {
+    context.bloc<RandomDrinkBloc>().add(const RandomDrinkEvent());
   }
 }
