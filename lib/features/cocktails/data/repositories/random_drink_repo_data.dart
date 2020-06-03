@@ -1,14 +1,14 @@
 import 'package:cocktail_app/core/failure.dart';
 import 'package:cocktail_app/features/cocktails/data/data_sources/random_network_source.dart';
 import 'package:cocktail_app/features/cocktails/domain/entities/drink.dart';
-import 'package:cocktail_app/features/cocktails/domain/failures.dart';
-import 'package:cocktail_app/features/cocktails/domain/repositories/random_repo.dart';
+import 'package:cocktail_app/features/cocktails/domain/failures/failures.dart';
+import 'package:cocktail_app/features/cocktails/domain/repositories/random_drink_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 
 /// Implementation of RandomRepo from domain layer.
-class RandomRepoData implements RandomRepo {
-  RandomRepoData({
+class RandomDrinkRepoData implements RandomDrinkRepo {
+  RandomDrinkRepoData({
     @required this.randomNetworkSource,
   });
 
