@@ -35,6 +35,7 @@ class _RandomFragmentState extends State<RandomFragment> {
               error: (error) => Center(
                 child: Text(error.message),
               ),
+              initial: (initial) => const Offstage(),
             ),
             Align(
               alignment: Alignment.bottomCenter,

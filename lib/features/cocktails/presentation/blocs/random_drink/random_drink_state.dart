@@ -8,6 +8,9 @@ abstract class RandomDrinkState with _$RandomDrinkState {
   /// If state is loading to get data.
   const factory RandomDrinkState.loading() = _LoadingRandomDrinkState;
 
+  /// Initial state.
+  const factory RandomDrinkState.initial() = _InitialRandomDrinkState;
+
   /// To show error message.
   const factory RandomDrinkState.error({String message}) = _ErrorRandomDrinkState;
 }
