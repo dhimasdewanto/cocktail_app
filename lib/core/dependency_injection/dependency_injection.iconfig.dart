@@ -11,6 +11,8 @@ import 'package:cocktail_app/features/cocktails/data/repositories/letter_list_dr
 import 'package:cocktail_app/features/cocktails/domain/repositories/letter_list_drinks_repo.dart';
 import 'package:cocktail_app/features/cocktails/data/data_sources/random_network_source.dart';
 import 'package:cocktail_app/features/cocktails/data/data_sources/search_cocktails_network_source.dart';
+import 'package:cocktail_app/features/cocktails/data/repositories/search_drinks_repo_data.dart';
+import 'package:cocktail_app/features/cocktails/domain/repositories/search_drinks_repo.dart';
 import 'package:cocktail_app/features/cocktails/domain/use_cases/get_drinks_by_letter.dart';
 import 'package:cocktail_app/features/cocktails/presentation/blocs/letter_list_drinks/letter_list_drinks_bloc.dart';
 import 'package:cocktail_app/features/cocktails/data/repositories/random_drink_repo_data.dart';
@@ -30,6 +32,8 @@ void $initGetIt(GetIt g, {String environment}) {
       () => RandomNetworkSourceImpl(dio: g<Dio>()));
   g.registerFactory<SearchCocktailsNetworkSource>(
       () => SearchCocktailsNetworkSourceImpl(dio: g<Dio>()));
+  g.registerFactory<SearchDrinksRepo>(() => SearchDrinksRepoData(
+      searchNetworkSource: g<SearchCocktailsNetworkSource>()));
   g.registerLazySingleton<GetDrinksByLetter>(
       () => GetDrinksByLetter(repo: g<LetterListDrinksRepo>()));
   g.registerFactory<LetterListDrinksBloc>(
