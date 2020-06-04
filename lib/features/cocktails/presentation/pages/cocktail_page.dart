@@ -4,6 +4,8 @@ import 'package:cocktail_app/features/cocktails/presentation/blocs/letter_list_d
 import 'package:cocktail_app/features/cocktails/presentation/fragments/letter_fragment.dart';
 import 'package:cocktail_app/features/cocktails/presentation/fragments/random_fragment.dart';
 import 'package:cocktail_app/features/cocktails/presentation/blocs/random_drink/random_drink_bloc.dart';
+import 'package:cocktail_app/features/cocktails/presentation/blocs/search_drinks/search_drinks_bloc.dart';
+import 'package:cocktail_app/features/cocktails/presentation/fragments/search_fragment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,6 +22,7 @@ class _CocktailPageState extends State<CocktailPage> {
 
   final _listFragments = const [
     RandomFragment(),
+    SearchFragment(),
     LetterFragment(),
   ];
 
@@ -27,6 +30,10 @@ class _CocktailPageState extends State<CocktailPage> {
     BottomNavigationBarItem(
       icon: Icon(Icons.local_drink),
       title: Text('Random'),
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.search),
+      title: Text('Search'),
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.list),
@@ -47,6 +54,9 @@ class _CocktailPageState extends State<CocktailPage> {
           ),
           BlocProvider<LetterListDrinksBloc>(
             create: (_) => getIt<LetterListDrinksBloc>(),
+          ),
+          BlocProvider<SearchDrinksBloc>(
+            create: (_) => getIt<SearchDrinksBloc>(),
           ),
         ],
         child: _listFragments[_selectedIndex],

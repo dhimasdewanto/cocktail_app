@@ -10,10 +10,15 @@ import 'package:cocktail_app/features/cocktails/data/data_sources/letter_list_dr
 import 'package:cocktail_app/features/cocktails/data/repositories/letter_list_drinks_repo_data.dart';
 import 'package:cocktail_app/features/cocktails/domain/repositories/letter_list_drinks_repo.dart';
 import 'package:cocktail_app/features/cocktails/data/data_sources/random_network_source.dart';
+import 'package:cocktail_app/features/cocktails/data/data_sources/search_cocktails_network_source.dart';
+import 'package:cocktail_app/features/cocktails/data/repositories/search_drinks_repo_data.dart';
+import 'package:cocktail_app/features/cocktails/domain/repositories/search_drinks_repo.dart';
 import 'package:cocktail_app/features/cocktails/domain/use_cases/get_drinks_by_letter.dart';
 import 'package:cocktail_app/features/cocktails/presentation/blocs/letter_list_drinks/letter_list_drinks_bloc.dart';
 import 'package:cocktail_app/features/cocktails/data/repositories/random_drink_repo_data.dart';
 import 'package:cocktail_app/features/cocktails/domain/repositories/random_drink_repo.dart';
+import 'package:cocktail_app/features/cocktails/domain/use_cases/search_drinks.dart';
+import 'package:cocktail_app/features/cocktails/presentation/blocs/search_drinks/search_drinks_bloc.dart';
 import 'package:cocktail_app/features/cocktails/domain/use_cases/get_random_drink.dart';
 import 'package:cocktail_app/features/cocktails/presentation/blocs/random_drink/random_drink_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -27,12 +32,20 @@ void $initGetIt(GetIt g, {String environment}) {
       letterNetworkSource: g<LetterListDrinksNetworkSource>()));
   g.registerFactory<RandomNetworkSource>(
       () => RandomNetworkSourceImpl(dio: g<Dio>()));
+  g.registerFactory<SearchCocktailsNetworkSource>(
+      () => SearchCocktailsNetworkSourceImpl(dio: g<Dio>()));
+  g.registerFactory<SearchDrinksRepo>(() => SearchDrinksRepoData(
+      searchNetworkSource: g<SearchCocktailsNetworkSource>()));
   g.registerLazySingleton<GetDrinksByLetter>(
       () => GetDrinksByLetter(repo: g<LetterListDrinksRepo>()));
   g.registerFactory<LetterListDrinksBloc>(
       () => LetterListDrinksBloc(getDrinksByLetter: g<GetDrinksByLetter>()));
   g.registerFactory<RandomDrinkRepo>(
       () => RandomDrinkRepoData(randomNetworkSource: g<RandomNetworkSource>()));
+  g.registerLazySingleton<SearchDrinks>(
+      () => SearchDrinks(repo: g<SearchDrinksRepo>()));
+  g.registerFactory<SearchDrinksBloc>(
+      () => SearchDrinksBloc(searchDrinks: g<SearchDrinks>()));
   g.registerLazySingleton<GetRandomDrink>(
       () => GetRandomDrink(repo: g<RandomDrinkRepo>()));
   g.registerFactory<RandomDrinkBloc>(
