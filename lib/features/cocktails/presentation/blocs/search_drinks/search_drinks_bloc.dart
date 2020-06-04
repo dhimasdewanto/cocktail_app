@@ -61,6 +61,8 @@ class SearchDrinksBloc extends Bloc<SearchDrinksEvent, SearchDrinksState> {
   ) async* {
     if (failure is SearchTextEmptyFailure) {
       yield const SearchDrinksState.searchTextEmpty();
+    } else if (failure is NotFoundFailure) {
+      yield const SearchDrinksState.notFound();
     } else {
       yield const SearchDrinksState.error(
         message: 'Something wrong',

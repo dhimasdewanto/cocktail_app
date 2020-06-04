@@ -30,6 +30,9 @@ class SearchFragment extends StatelessWidget {
                 initial: () => const Center(
                   child: Text('Fill text field to search...'),
                 ),
+                notFound: () => const Center(
+                  child: Text('Search result not found'),
+                ),
                 loading: () => const Center(
                   child: CircularProgressIndicator(),
                 ),

@@ -140,14 +140,18 @@ class _$SearchDrinksStateTearOff {
     return const _LoadingSearchDrinksState();
   }
 
-  _EmptySearchDrinksState searchTextEmpty() {
-    return const _EmptySearchDrinksState();
-  }
-
   _ViewSearchDrinksState view(List<Drink> listDrinks) {
     return _ViewSearchDrinksState(
       listDrinks,
     );
+  }
+
+  _EmptySearchDrinksState searchTextEmpty() {
+    return const _EmptySearchDrinksState();
+  }
+
+  _NotFoundSearchDrinksState notFound() {
+    return const _NotFoundSearchDrinksState();
   }
 
   _ErrorSearchDrinksState error({String message}) {
@@ -165,16 +169,18 @@ mixin _$SearchDrinksState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result searchTextEmpty(),
     @required Result view(List<Drink> listDrinks),
+    @required Result searchTextEmpty(),
+    @required Result notFound(),
     @required Result error(String message),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result searchTextEmpty(),
     Result view(List<Drink> listDrinks),
+    Result searchTextEmpty(),
+    Result notFound(),
     Result error(String message),
     @required Result orElse(),
   });
@@ -182,16 +188,18 @@ mixin _$SearchDrinksState {
   Result map<Result extends Object>({
     @required Result initial(_InitialSearchDrinksState value),
     @required Result loading(_LoadingSearchDrinksState value),
-    @required Result searchTextEmpty(_EmptySearchDrinksState value),
     @required Result view(_ViewSearchDrinksState value),
+    @required Result searchTextEmpty(_EmptySearchDrinksState value),
+    @required Result notFound(_NotFoundSearchDrinksState value),
     @required Result error(_ErrorSearchDrinksState value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_InitialSearchDrinksState value),
     Result loading(_LoadingSearchDrinksState value),
-    Result searchTextEmpty(_EmptySearchDrinksState value),
     Result view(_ViewSearchDrinksState value),
+    Result searchTextEmpty(_EmptySearchDrinksState value),
+    Result notFound(_NotFoundSearchDrinksState value),
     Result error(_ErrorSearchDrinksState value),
     @required Result orElse(),
   });
@@ -259,14 +267,16 @@ class _$_InitialSearchDrinksState
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result searchTextEmpty(),
     @required Result view(List<Drink> listDrinks),
+    @required Result searchTextEmpty(),
+    @required Result notFound(),
     @required Result error(String message),
   }) {
     assert(initial != null);
     assert(loading != null);
-    assert(searchTextEmpty != null);
     assert(view != null);
+    assert(searchTextEmpty != null);
+    assert(notFound != null);
     assert(error != null);
     return initial();
   }
@@ -276,8 +286,9 @@ class _$_InitialSearchDrinksState
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result searchTextEmpty(),
     Result view(List<Drink> listDrinks),
+    Result searchTextEmpty(),
+    Result notFound(),
     Result error(String message),
     @required Result orElse(),
   }) {
@@ -293,14 +304,16 @@ class _$_InitialSearchDrinksState
   Result map<Result extends Object>({
     @required Result initial(_InitialSearchDrinksState value),
     @required Result loading(_LoadingSearchDrinksState value),
-    @required Result searchTextEmpty(_EmptySearchDrinksState value),
     @required Result view(_ViewSearchDrinksState value),
+    @required Result searchTextEmpty(_EmptySearchDrinksState value),
+    @required Result notFound(_NotFoundSearchDrinksState value),
     @required Result error(_ErrorSearchDrinksState value),
   }) {
     assert(initial != null);
     assert(loading != null);
-    assert(searchTextEmpty != null);
     assert(view != null);
+    assert(searchTextEmpty != null);
+    assert(notFound != null);
     assert(error != null);
     return initial(this);
   }
@@ -310,8 +323,9 @@ class _$_InitialSearchDrinksState
   Result maybeMap<Result extends Object>({
     Result initial(_InitialSearchDrinksState value),
     Result loading(_LoadingSearchDrinksState value),
-    Result searchTextEmpty(_EmptySearchDrinksState value),
     Result view(_ViewSearchDrinksState value),
+    Result searchTextEmpty(_EmptySearchDrinksState value),
+    Result notFound(_NotFoundSearchDrinksState value),
     Result error(_ErrorSearchDrinksState value),
     @required Result orElse(),
   }) {
@@ -374,14 +388,16 @@ class _$_LoadingSearchDrinksState
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result searchTextEmpty(),
     @required Result view(List<Drink> listDrinks),
+    @required Result searchTextEmpty(),
+    @required Result notFound(),
     @required Result error(String message),
   }) {
     assert(initial != null);
     assert(loading != null);
-    assert(searchTextEmpty != null);
     assert(view != null);
+    assert(searchTextEmpty != null);
+    assert(notFound != null);
     assert(error != null);
     return loading();
   }
@@ -391,8 +407,9 @@ class _$_LoadingSearchDrinksState
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result searchTextEmpty(),
     Result view(List<Drink> listDrinks),
+    Result searchTextEmpty(),
+    Result notFound(),
     Result error(String message),
     @required Result orElse(),
   }) {
@@ -408,14 +425,16 @@ class _$_LoadingSearchDrinksState
   Result map<Result extends Object>({
     @required Result initial(_InitialSearchDrinksState value),
     @required Result loading(_LoadingSearchDrinksState value),
-    @required Result searchTextEmpty(_EmptySearchDrinksState value),
     @required Result view(_ViewSearchDrinksState value),
+    @required Result searchTextEmpty(_EmptySearchDrinksState value),
+    @required Result notFound(_NotFoundSearchDrinksState value),
     @required Result error(_ErrorSearchDrinksState value),
   }) {
     assert(initial != null);
     assert(loading != null);
-    assert(searchTextEmpty != null);
     assert(view != null);
+    assert(searchTextEmpty != null);
+    assert(notFound != null);
     assert(error != null);
     return loading(this);
   }
@@ -425,8 +444,9 @@ class _$_LoadingSearchDrinksState
   Result maybeMap<Result extends Object>({
     Result initial(_InitialSearchDrinksState value),
     Result loading(_LoadingSearchDrinksState value),
-    Result searchTextEmpty(_EmptySearchDrinksState value),
     Result view(_ViewSearchDrinksState value),
+    Result searchTextEmpty(_EmptySearchDrinksState value),
+    Result notFound(_NotFoundSearchDrinksState value),
     Result error(_ErrorSearchDrinksState value),
     @required Result orElse(),
   }) {
@@ -440,121 +460,6 @@ class _$_LoadingSearchDrinksState
 
 abstract class _LoadingSearchDrinksState implements SearchDrinksState {
   const factory _LoadingSearchDrinksState() = _$_LoadingSearchDrinksState;
-}
-
-abstract class _$EmptySearchDrinksStateCopyWith<$Res> {
-  factory _$EmptySearchDrinksStateCopyWith(_EmptySearchDrinksState value,
-          $Res Function(_EmptySearchDrinksState) then) =
-      __$EmptySearchDrinksStateCopyWithImpl<$Res>;
-}
-
-class __$EmptySearchDrinksStateCopyWithImpl<$Res>
-    extends _$SearchDrinksStateCopyWithImpl<$Res>
-    implements _$EmptySearchDrinksStateCopyWith<$Res> {
-  __$EmptySearchDrinksStateCopyWithImpl(_EmptySearchDrinksState _value,
-      $Res Function(_EmptySearchDrinksState) _then)
-      : super(_value, (v) => _then(v as _EmptySearchDrinksState));
-
-  @override
-  _EmptySearchDrinksState get _value => super._value as _EmptySearchDrinksState;
-}
-
-class _$_EmptySearchDrinksState
-    with DiagnosticableTreeMixin
-    implements _EmptySearchDrinksState {
-  const _$_EmptySearchDrinksState();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SearchDrinksState.searchTextEmpty()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SearchDrinksState.searchTextEmpty'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _EmptySearchDrinksState);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result searchTextEmpty(),
-    @required Result view(List<Drink> listDrinks),
-    @required Result error(String message),
-  }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(searchTextEmpty != null);
-    assert(view != null);
-    assert(error != null);
-    return searchTextEmpty();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result searchTextEmpty(),
-    Result view(List<Drink> listDrinks),
-    Result error(String message),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (searchTextEmpty != null) {
-      return searchTextEmpty();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_InitialSearchDrinksState value),
-    @required Result loading(_LoadingSearchDrinksState value),
-    @required Result searchTextEmpty(_EmptySearchDrinksState value),
-    @required Result view(_ViewSearchDrinksState value),
-    @required Result error(_ErrorSearchDrinksState value),
-  }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(searchTextEmpty != null);
-    assert(view != null);
-    assert(error != null);
-    return searchTextEmpty(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_InitialSearchDrinksState value),
-    Result loading(_LoadingSearchDrinksState value),
-    Result searchTextEmpty(_EmptySearchDrinksState value),
-    Result view(_ViewSearchDrinksState value),
-    Result error(_ErrorSearchDrinksState value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (searchTextEmpty != null) {
-      return searchTextEmpty(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _EmptySearchDrinksState implements SearchDrinksState {
-  const factory _EmptySearchDrinksState() = _$_EmptySearchDrinksState;
 }
 
 abstract class _$ViewSearchDrinksStateCopyWith<$Res> {
@@ -628,14 +533,16 @@ class _$_ViewSearchDrinksState
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result searchTextEmpty(),
     @required Result view(List<Drink> listDrinks),
+    @required Result searchTextEmpty(),
+    @required Result notFound(),
     @required Result error(String message),
   }) {
     assert(initial != null);
     assert(loading != null);
-    assert(searchTextEmpty != null);
     assert(view != null);
+    assert(searchTextEmpty != null);
+    assert(notFound != null);
     assert(error != null);
     return view(listDrinks);
   }
@@ -645,8 +552,9 @@ class _$_ViewSearchDrinksState
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result searchTextEmpty(),
     Result view(List<Drink> listDrinks),
+    Result searchTextEmpty(),
+    Result notFound(),
     Result error(String message),
     @required Result orElse(),
   }) {
@@ -662,14 +570,16 @@ class _$_ViewSearchDrinksState
   Result map<Result extends Object>({
     @required Result initial(_InitialSearchDrinksState value),
     @required Result loading(_LoadingSearchDrinksState value),
-    @required Result searchTextEmpty(_EmptySearchDrinksState value),
     @required Result view(_ViewSearchDrinksState value),
+    @required Result searchTextEmpty(_EmptySearchDrinksState value),
+    @required Result notFound(_NotFoundSearchDrinksState value),
     @required Result error(_ErrorSearchDrinksState value),
   }) {
     assert(initial != null);
     assert(loading != null);
-    assert(searchTextEmpty != null);
     assert(view != null);
+    assert(searchTextEmpty != null);
+    assert(notFound != null);
     assert(error != null);
     return view(this);
   }
@@ -679,8 +589,9 @@ class _$_ViewSearchDrinksState
   Result maybeMap<Result extends Object>({
     Result initial(_InitialSearchDrinksState value),
     Result loading(_LoadingSearchDrinksState value),
-    Result searchTextEmpty(_EmptySearchDrinksState value),
     Result view(_ViewSearchDrinksState value),
+    Result searchTextEmpty(_EmptySearchDrinksState value),
+    Result notFound(_NotFoundSearchDrinksState value),
     Result error(_ErrorSearchDrinksState value),
     @required Result orElse(),
   }) {
@@ -698,6 +609,248 @@ abstract class _ViewSearchDrinksState implements SearchDrinksState {
 
   List<Drink> get listDrinks;
   _$ViewSearchDrinksStateCopyWith<_ViewSearchDrinksState> get copyWith;
+}
+
+abstract class _$EmptySearchDrinksStateCopyWith<$Res> {
+  factory _$EmptySearchDrinksStateCopyWith(_EmptySearchDrinksState value,
+          $Res Function(_EmptySearchDrinksState) then) =
+      __$EmptySearchDrinksStateCopyWithImpl<$Res>;
+}
+
+class __$EmptySearchDrinksStateCopyWithImpl<$Res>
+    extends _$SearchDrinksStateCopyWithImpl<$Res>
+    implements _$EmptySearchDrinksStateCopyWith<$Res> {
+  __$EmptySearchDrinksStateCopyWithImpl(_EmptySearchDrinksState _value,
+      $Res Function(_EmptySearchDrinksState) _then)
+      : super(_value, (v) => _then(v as _EmptySearchDrinksState));
+
+  @override
+  _EmptySearchDrinksState get _value => super._value as _EmptySearchDrinksState;
+}
+
+class _$_EmptySearchDrinksState
+    with DiagnosticableTreeMixin
+    implements _EmptySearchDrinksState {
+  const _$_EmptySearchDrinksState();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SearchDrinksState.searchTextEmpty()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SearchDrinksState.searchTextEmpty'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EmptySearchDrinksState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initial(),
+    @required Result loading(),
+    @required Result view(List<Drink> listDrinks),
+    @required Result searchTextEmpty(),
+    @required Result notFound(),
+    @required Result error(String message),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(view != null);
+    assert(searchTextEmpty != null);
+    assert(notFound != null);
+    assert(error != null);
+    return searchTextEmpty();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initial(),
+    Result loading(),
+    Result view(List<Drink> listDrinks),
+    Result searchTextEmpty(),
+    Result notFound(),
+    Result error(String message),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (searchTextEmpty != null) {
+      return searchTextEmpty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initial(_InitialSearchDrinksState value),
+    @required Result loading(_LoadingSearchDrinksState value),
+    @required Result view(_ViewSearchDrinksState value),
+    @required Result searchTextEmpty(_EmptySearchDrinksState value),
+    @required Result notFound(_NotFoundSearchDrinksState value),
+    @required Result error(_ErrorSearchDrinksState value),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(view != null);
+    assert(searchTextEmpty != null);
+    assert(notFound != null);
+    assert(error != null);
+    return searchTextEmpty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initial(_InitialSearchDrinksState value),
+    Result loading(_LoadingSearchDrinksState value),
+    Result view(_ViewSearchDrinksState value),
+    Result searchTextEmpty(_EmptySearchDrinksState value),
+    Result notFound(_NotFoundSearchDrinksState value),
+    Result error(_ErrorSearchDrinksState value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (searchTextEmpty != null) {
+      return searchTextEmpty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptySearchDrinksState implements SearchDrinksState {
+  const factory _EmptySearchDrinksState() = _$_EmptySearchDrinksState;
+}
+
+abstract class _$NotFoundSearchDrinksStateCopyWith<$Res> {
+  factory _$NotFoundSearchDrinksStateCopyWith(_NotFoundSearchDrinksState value,
+          $Res Function(_NotFoundSearchDrinksState) then) =
+      __$NotFoundSearchDrinksStateCopyWithImpl<$Res>;
+}
+
+class __$NotFoundSearchDrinksStateCopyWithImpl<$Res>
+    extends _$SearchDrinksStateCopyWithImpl<$Res>
+    implements _$NotFoundSearchDrinksStateCopyWith<$Res> {
+  __$NotFoundSearchDrinksStateCopyWithImpl(_NotFoundSearchDrinksState _value,
+      $Res Function(_NotFoundSearchDrinksState) _then)
+      : super(_value, (v) => _then(v as _NotFoundSearchDrinksState));
+
+  @override
+  _NotFoundSearchDrinksState get _value =>
+      super._value as _NotFoundSearchDrinksState;
+}
+
+class _$_NotFoundSearchDrinksState
+    with DiagnosticableTreeMixin
+    implements _NotFoundSearchDrinksState {
+  const _$_NotFoundSearchDrinksState();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SearchDrinksState.notFound()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SearchDrinksState.notFound'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _NotFoundSearchDrinksState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initial(),
+    @required Result loading(),
+    @required Result view(List<Drink> listDrinks),
+    @required Result searchTextEmpty(),
+    @required Result notFound(),
+    @required Result error(String message),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(view != null);
+    assert(searchTextEmpty != null);
+    assert(notFound != null);
+    assert(error != null);
+    return notFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initial(),
+    Result loading(),
+    Result view(List<Drink> listDrinks),
+    Result searchTextEmpty(),
+    Result notFound(),
+    Result error(String message),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (notFound != null) {
+      return notFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initial(_InitialSearchDrinksState value),
+    @required Result loading(_LoadingSearchDrinksState value),
+    @required Result view(_ViewSearchDrinksState value),
+    @required Result searchTextEmpty(_EmptySearchDrinksState value),
+    @required Result notFound(_NotFoundSearchDrinksState value),
+    @required Result error(_ErrorSearchDrinksState value),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(view != null);
+    assert(searchTextEmpty != null);
+    assert(notFound != null);
+    assert(error != null);
+    return notFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initial(_InitialSearchDrinksState value),
+    Result loading(_LoadingSearchDrinksState value),
+    Result view(_ViewSearchDrinksState value),
+    Result searchTextEmpty(_EmptySearchDrinksState value),
+    Result notFound(_NotFoundSearchDrinksState value),
+    Result error(_ErrorSearchDrinksState value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (notFound != null) {
+      return notFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NotFoundSearchDrinksState implements SearchDrinksState {
+  const factory _NotFoundSearchDrinksState() = _$_NotFoundSearchDrinksState;
 }
 
 abstract class _$ErrorSearchDrinksStateCopyWith<$Res> {
@@ -770,14 +923,16 @@ class _$_ErrorSearchDrinksState
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result searchTextEmpty(),
     @required Result view(List<Drink> listDrinks),
+    @required Result searchTextEmpty(),
+    @required Result notFound(),
     @required Result error(String message),
   }) {
     assert(initial != null);
     assert(loading != null);
-    assert(searchTextEmpty != null);
     assert(view != null);
+    assert(searchTextEmpty != null);
+    assert(notFound != null);
     assert(error != null);
     return error(message);
   }
@@ -787,8 +942,9 @@ class _$_ErrorSearchDrinksState
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result searchTextEmpty(),
     Result view(List<Drink> listDrinks),
+    Result searchTextEmpty(),
+    Result notFound(),
     Result error(String message),
     @required Result orElse(),
   }) {
@@ -804,14 +960,16 @@ class _$_ErrorSearchDrinksState
   Result map<Result extends Object>({
     @required Result initial(_InitialSearchDrinksState value),
     @required Result loading(_LoadingSearchDrinksState value),
-    @required Result searchTextEmpty(_EmptySearchDrinksState value),
     @required Result view(_ViewSearchDrinksState value),
+    @required Result searchTextEmpty(_EmptySearchDrinksState value),
+    @required Result notFound(_NotFoundSearchDrinksState value),
     @required Result error(_ErrorSearchDrinksState value),
   }) {
     assert(initial != null);
     assert(loading != null);
-    assert(searchTextEmpty != null);
     assert(view != null);
+    assert(searchTextEmpty != null);
+    assert(notFound != null);
     assert(error != null);
     return error(this);
   }
@@ -821,8 +979,9 @@ class _$_ErrorSearchDrinksState
   Result maybeMap<Result extends Object>({
     Result initial(_InitialSearchDrinksState value),
     Result loading(_LoadingSearchDrinksState value),
-    Result searchTextEmpty(_EmptySearchDrinksState value),
     Result view(_ViewSearchDrinksState value),
+    Result searchTextEmpty(_EmptySearchDrinksState value),
+    Result notFound(_NotFoundSearchDrinksState value),
     Result error(_ErrorSearchDrinksState value),
     @required Result orElse(),
   }) {

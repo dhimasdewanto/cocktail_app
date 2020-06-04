@@ -8,12 +8,15 @@ abstract class SearchDrinksState with _$SearchDrinksState {
   /// Loading state.
   const factory SearchDrinksState.loading() = _LoadingSearchDrinksState;
 
-  /// Error state if search text is empty.
-  const factory SearchDrinksState.searchTextEmpty() = _EmptySearchDrinksState;
-
   /// State to show list drinks data.
   const factory SearchDrinksState.view(List<Drink> listDrinks) =
       _ViewSearchDrinksState;
+
+  /// Error state if search text is empty.
+  const factory SearchDrinksState.searchTextEmpty() = _EmptySearchDrinksState;
+
+  /// Error state if search result not found.
+  const factory SearchDrinksState.notFound() = _NotFoundSearchDrinksState;
 
   /// Default error state, like [ServerFailure], etc.
   const factory SearchDrinksState.error({String message}) =
