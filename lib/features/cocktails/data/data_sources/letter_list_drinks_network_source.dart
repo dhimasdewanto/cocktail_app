@@ -4,15 +4,16 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 
-/// Interface of get drink drink by letter network source.
+/// Interface of get drinks by letter network source.
 abstract class LetterListDrinksNetworkSource {
   Future<List<DrinkModel>> getListDrinksByLetter(String letter);
 }
 
-/// Implementation of get drink drink by letter network source.
+/// Implementation of get drinks by letter network source.
 @Injectable(as: LetterListDrinksNetworkSource)
 @lazySingleton
-class LetterListDrinksNetworkSourceImpl implements LetterListDrinksNetworkSource {
+class LetterListDrinksNetworkSourceImpl
+    implements LetterListDrinksNetworkSource {
   LetterListDrinksNetworkSourceImpl({
     @required this.dio,
   });
