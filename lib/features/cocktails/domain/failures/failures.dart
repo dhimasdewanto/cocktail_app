@@ -14,3 +14,8 @@ class CharOnlyFailure extends Failure {
 class NotFoundFailure extends Failure {
   const NotFoundFailure({String message}): super(message: message);
 }
+
+/// [SearchTextEmptyFailure] failure.
+class SearchTextEmptyFailure extends Failure {
+  const SearchTextEmptyFailure({String message}): super(message: message);
+}
