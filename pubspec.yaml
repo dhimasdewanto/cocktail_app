@@ -60,6 +60,9 @@ dev_dependencies:
   # A build system for Dart code generation and modular compilation.
   build_runner: ^1.10.0
 
+  # A command-line tool which simplifies the task of updating your Flutter app's launcher icon.
+  flutter_launcher_icons: ^0.7.5
+
   # Another code generator for unions/pattern-matching/copy.
   # Also has sealed class generator.
   freezed: ^0.10.9
@@ -73,6 +76,16 @@ dev_dependencies:
 
   # For testing purposes.
   mockito: ^4.1.1
+
+
+# Setup app icon
+flutter_icons:
+  image_path: "assets/icons/icon.png"
+  android: true
+  ios: true
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/icons/icon.png"
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
